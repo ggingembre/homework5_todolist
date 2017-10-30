@@ -36,14 +36,12 @@
             </tr>
             <tr>
                 <td>
-                    <input TYPE=checkbox name=done VALUE=done>
-                </td>
-                <td>
-                    Done
+                    <input TYPE="submit" value="Done!">
                 </td>
             </tr>
     </div>
             </table>
+        </form>
         <br>
         <br>
     </div>

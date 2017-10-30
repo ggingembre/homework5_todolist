@@ -22,12 +22,12 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>DeleteServlet</servlet-name>
-        <servlet-class>com.app.servlets.DeleteServlet</servlet-class>
+        <servlet-name>DoneServlet</servlet-name>
+        <servlet-class>com.app.servlets.DoneServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DeleteServlet</servlet-name>
-        <url-pattern>/delete</url-pattern>
+        <servlet-name>DoneServlet</servlet-name>
+        <url-pattern>/done</url-pattern>
     </servlet-mapping>
 
 </web-app>
