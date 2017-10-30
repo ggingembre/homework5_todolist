@@ -19,7 +19,7 @@
 <c:forEach var="task" items="${tasks}">
     <div class="first" style="float: left; width:27%; margin:0.5%; box-shadow: 10px 10px 5px grey; background-color: #f1f1f1">
 
-        <form action="delete" method="Post">
+        <form action="done" method="Post">
         <table>
     <div class="second" style="height:80px" >
             <tr>
@@ -36,7 +36,8 @@
             </tr>
             <tr>
                 <td>
-                    <input TYPE="submit" value="Done!">
+                    <input type="submit" name="button" value="Done!">
+                    <input type="hidden" name="Done!" value="${task.id}">
                 </td>
             </tr>
     </div>

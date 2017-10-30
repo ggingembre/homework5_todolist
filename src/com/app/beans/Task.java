@@ -1,12 +1,14 @@
 package com.app.beans;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 /**
  * Created by Guillaume Gingembre on 29/10/2017.
  */
 public class Task {
 
+    private String id;
     private String name;
     private Priority priority;
     private LocalDate deadline;
@@ -16,6 +18,7 @@ public class Task {
     public Task(){}
 
     public Task(String name, Priority priority, LocalDate deadline, LocalDate reminder) {
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.priority = priority;
         this.deadline = deadline;
@@ -30,21 +33,16 @@ public class Task {
 
         Task task = (Task) o;
 
-        if (done != task.done) return false;
-        if (!name.equals(task.name)) return false;
-        if (priority != task.priority) return false;
-        if (!deadline.equals(task.deadline)) return false;
-        return reminder != null ? reminder.equals(task.reminder) : task.reminder == null;
+        return id.equals(task.id);
     }
 
     @Override
     public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + priority.hashCode();
-        result = 31 * result + deadline.hashCode();
-        result = 31 * result + (reminder != null ? reminder.hashCode() : 0);
-        result = 31 * result + (done ? 1 : 0);
-        return result;
+        return id.hashCode();
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {
@@ -90,7 +88,8 @@ public class Task {
     @Override
     public String toString() {
         return "Task{" +
-                "name='" + name + '\'' +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 ", priority=" + priority +
                 ", deadline=" + deadline +
                 ", reminder=" + reminder +
