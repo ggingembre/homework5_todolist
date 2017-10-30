@@ -29,6 +29,7 @@ public class ShowServlet extends HttpServlet {
 
         // initiating our variables
 
+
         LocalDate date1 = LocalDate.parse("2017-11-01");
         Task task1 = new Task("task1", HIGH, date1, date1 );
 
@@ -40,9 +41,11 @@ public class ShowServlet extends HttpServlet {
 
         List<Task> tasks = new ArrayList<Task>();
 
+        /*
         tasks.add(task1);
         tasks.add(task2);
         tasks.add(task3);
+        */
 
         HttpSession session = request.getSession();
         session.setAttribute("tasks", tasks);
@@ -50,7 +53,6 @@ public class ShowServlet extends HttpServlet {
         request.setAttribute("tasks", tasks);
 
         this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-
 
     }
 }

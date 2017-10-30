@@ -18,7 +18,9 @@
 <p>Tasks to complete:</p>
 <c:forEach var="task" items="${tasks}">
     <div class="first" style="float: left; width:27%; margin:0.5%; box-shadow: 10px 10px 5px grey; background-color: #f1f1f1">
-    <table>
+
+        <form action="delete" method="Post">
+        <table>
     <div class="second" style="height:80px" >
             <tr>
                 <td class="tb1" style="width:30%">Priority :</td>
@@ -32,6 +34,14 @@
                  <td class="tb1" style="width:30%">Deadline :</td>
                  <td class="tb1" style="width:60%">${task.deadline}</td>
             </tr>
+            <tr>
+                <td>
+                    <input TYPE=checkbox name=done VALUE=done>
+                </td>
+                <td>
+                    Done
+                </td>
+            </tr>
     </div>
             </table>
         <br>
